@@ -1,6 +1,7 @@
-﻿using System.IO;
+﻿using Java.IO;
 
 using Android.App;
+using Android.Content.Res;
 using Android.Widget;
 using Android.OS;
 using Android.Media;
@@ -14,11 +15,16 @@ namespace Astral
     {
         int count = 1;
 
-        protected MediaPlayer player = new MediaPlayer();
+        protected MediaPlayer player;
         public void StartPlayer(string fileName)
         {
-            player.Reset();
-            player.SetDataSource("Assets/shapeofyou.mp3");
+            //  player = player ?? MediaPlayer.Create(this, Resource.Raw.shapeofyou);
+            player = player ?? new MediaPlayer();
+
+            AssetManager asset = this.Assets;
+            var afd = asset.OpenFd(fileName);
+            player.SetDataSource(afd);
+
             player.Prepare();
             player.Start();
         }

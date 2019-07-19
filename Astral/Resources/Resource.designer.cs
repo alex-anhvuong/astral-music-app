@@ -44,8 +44,8 @@ namespace Astral
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int white = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int white = 2131165184;
 			
 			static Color()
 			{
@@ -88,20 +88,20 @@ namespace Astral
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070004
-			public const int fastforwardButton = 2131165188;
+			// aapt resource value: 0x7f080004
+			public const int fastforwardButton = 2131230724;
 			
-			// aapt resource value: 0x7f070001
-			public const int imageView1 = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int imageView1 = 2131230721;
 			
-			// aapt resource value: 0x7f070002
-			public const int playButton = 2131165186;
+			// aapt resource value: 0x7f080002
+			public const int playButton = 2131230722;
 			
-			// aapt resource value: 0x7f070000
-			public const int relativeLayout1 = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int relativeLayout1 = 2131230720;
 			
-			// aapt resource value: 0x7f070003
-			public const int rewindButton = 2131165187;
+			// aapt resource value: 0x7f080003
+			public const int rewindButton = 2131230723;
 			
 			static Id()
 			{
@@ -145,11 +145,27 @@ namespace Astral
 			}
 		}
 		
-		public partial class String
+		public partial class Raw
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int app_name = 2131034112;
+			public const int shapeofyou = 2131034112;
+			
+			static Raw()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Raw()
+			{
+			}
+		}
+		
+		public partial class String
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int app_name = 2131099648;
 			
 			static String()
 			{

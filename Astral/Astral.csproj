@@ -65,9 +65,11 @@
     <AndroidResource Include="Resources\drawable\pause.png" />
     <AndroidResource Include="Resources\drawable\play.png" />
     <AndroidResource Include="Resources\drawable\rewind.png" />
+    <AndroidResource Include="Resources\raw\shapeofyou.mp3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\raw\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\shapeofyou.mp3" />
