@@ -1,6 +1,11 @@
-﻿using Android.App;
+﻿using System.IO;
+
+using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Media;
+using Android.Util;
+
 
 namespace Astral
 {
@@ -9,6 +14,15 @@ namespace Astral
     {
         int count = 1;
 
+        protected MediaPlayer player = new MediaPlayer();
+        public void StartPlayer(string fileName)
+        {
+            player.Reset();
+            player.SetDataSource("Assets/shapeofyou.mp3");
+            player.Prepare();
+            player.Start();
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -16,12 +30,16 @@ namespace Astral
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
 
-            button.Click += delegate { button.Text = $"{count++} clicks!"; };
+            var playButton = FindViewById<Button>(Resource.Id.playButton);
+
+            playButton.Click += (sender, e) =>
+            {
+                StartPlayer("shapeofyou.mp3");
+            };
         }
+
+
     }
 }
 
