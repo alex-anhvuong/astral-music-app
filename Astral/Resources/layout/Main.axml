@@ -18,19 +18,19 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/imageView1"
-            android:baselineAlignBottom="true"
-            android:layout_centerInParent="true" 
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
         />
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/playButton"
             android:layout_below="@id/imageView1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="50dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/play"
+            android:layout_centerHorizontal="true" 
         />
         <Button
             android:layout_width="50dp"
@@ -45,7 +45,7 @@
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/fastforwardButton" 
+            android:id="@+id/fastforwardButton"
             android:layout_toRightOf="@id/playButton"
             android:layout_alignTop="@id/playButton"
             android:layout_marginLeft="25dp"

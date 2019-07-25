@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Astral</string>
-    <color name="white">#FFFFFF</color>
     <string-array name="song_list">
+        <item>testrock.mp3</item>
         <item>shapeofyou.mp3</item>
         <item>bestpartofme.mp3</item>
         <item>perfect.mp3</item>

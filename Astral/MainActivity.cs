@@ -19,6 +19,11 @@ namespace Astral
         protected MediaPlayer player;
         int indexOfCurrentSong = 0;
 
+        //**
+        //*
+        //  Assign a song to the player
+        //*
+        //**  
         public void StartPlayer(string fileName)
         {
             //  player = player ?? MediaPlayer.Create(this, Resource.Raw.shapeofyou);
@@ -31,7 +36,27 @@ namespace Astral
             player.Start();
         }
 
-        protected void AddPlayButtonFunc(object sender, EventArgs e, Button playButton, string[] songList)
+        //**
+        //*
+        //  Autoplay the next song
+        //*
+        //** 
+        protected void OnSongCompletion(string[] songList)
+        {
+            player.Completion += delegate {
+                if (indexOfCurrentSong >= songList.Length - 1) return;
+                indexOfCurrentSong++;
+                StartPlayer(songList[indexOfCurrentSong]);
+            };
+        }
+
+        //**
+        //*
+        //  When play button is clicked.
+        //  We either play a new song/resume to the old song Or pause the player
+        //*
+        //** 
+        protected void OnPlayButton(Button playButton, string[] songList)
         {
             //  Log.Debug("astral-app", indexOfCurrentSong.ToString());
 
@@ -42,8 +67,9 @@ namespace Astral
                 //  RESUME THE SONG if the player is not null
                 if (player == null) StartPlayer(songList[indexOfCurrentSong]);
                 else player.Start();
+                OnSongCompletion(songList);
 
-                //  Switch the status of isPlaying and the icon of playButton
+                //  Switch the status of isPlaying and the icon of playButtonx
                 isPlaying = true;
                 playButton.SetBackgroundResource(Resource.Drawable.pause);
             }
@@ -53,7 +79,7 @@ namespace Astral
                 isPlaying = false;
                 playButton.SetBackgroundResource(Resource.Drawable.play);
 
-            };
+            }
         }
 
         //**
@@ -65,7 +91,7 @@ namespace Astral
         //  - The "condition" determines whether we are at the two ends of the list
         //*
         //**
-        protected void AddFastforwardOrRewindButtonFunc(Button playButton, string[] songList, Func<Boolean> condition, int i)
+        protected void OnFastforwardOrRewind(Button playButton, string[] songList, Func<Boolean> condition, int i)
         {
             //  STOP THE CURRENT SONG
             //  Release the resource that player currently holding
@@ -84,7 +110,11 @@ namespace Astral
 
             //  CALL A NEW SONG if the player is playing
             indexOfCurrentSong += i;
-            if (isPlaying) StartPlayer(songList[indexOfCurrentSong]);
+            if (isPlaying) 
+            {
+                StartPlayer(songList[indexOfCurrentSong]);
+                OnSongCompletion(songList);
+            }
         }
 
         //protected void AddForwardButtonFunc(object sender, EventArgs e, Button playButton, string[] songList)
@@ -141,9 +171,9 @@ namespace Astral
             var fastForwardButton = FindViewById<Button>(Resource.Id.fastforwardButton);
             var rewindButton = FindViewById<Button>(Resource.Id.rewindButton);
 
-            playButton.Click += (sender, e) => AddPlayButtonFunc(sender, e, playButton, songList);
-            fastForwardButton.Click += (sender, e) => AddFastforwardOrRewindButtonFunc(playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1);
-            rewindButton.Click += (sender, e) => AddFastforwardOrRewindButtonFunc(playButton, songList, () => indexOfCurrentSong <= 0, -1);
+            playButton.Click += (sender, e) => OnPlayButton(playButton, songList);
+            fastForwardButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1);
+            rewindButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong <= 0, -1);
         }
 
         protected override void OnSaveInstanceState(Bundle outState)
