@@ -2,4 +2,9 @@
 <resources>
     <string name="app_name">Astral</string>
     <color name="white">#FFFFFF</color>
+    <string-array name="song_list">
+        <item>shapeofyou.mp3</item>
+        <item>bestpartofme.mp3</item>
+        <item>perfect.mp3</item>
+    </string-array>
 </resources>

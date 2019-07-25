@@ -73,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\shapeofyou.mp3" />
+    <AndroidAsset Include="Assets\bestpartofme.mp3" />
+    <AndroidAsset Include="Assets\perfect.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

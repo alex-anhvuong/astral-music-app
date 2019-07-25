@@ -28,6 +28,22 @@ namespace Astral
 		{
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f080000
+			public const int song_list = 2131230720;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -88,20 +104,20 @@ namespace Astral
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080004
-			public const int fastforwardButton = 2131230724;
+			// aapt resource value: 0x7f090004
+			public const int fastforwardButton = 2131296260;
 			
-			// aapt resource value: 0x7f080001
-			public const int imageView1 = 2131230721;
+			// aapt resource value: 0x7f090001
+			public const int imageView1 = 2131296257;
 			
-			// aapt resource value: 0x7f080002
-			public const int playButton = 2131230722;
+			// aapt resource value: 0x7f090002
+			public const int playButton = 2131296258;
 			
-			// aapt resource value: 0x7f080000
-			public const int relativeLayout1 = 2131230720;
+			// aapt resource value: 0x7f090000
+			public const int relativeLayout1 = 2131296256;
 			
-			// aapt resource value: 0x7f080003
-			public const int rewindButton = 2131230723;
+			// aapt resource value: 0x7f090003
+			public const int rewindButton = 2131296259;
 			
 			static Id()
 			{
