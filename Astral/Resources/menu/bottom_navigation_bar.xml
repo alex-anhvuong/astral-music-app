@@ -3,12 +3,18 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item 
         android:id="@+id/action_library"
-        android:icon="@drawable/ic_action_library"
+        android:icon="@mipmap/ic_action_library"
         android:title="@string/action_library"
-        app:showAsAction="ifRoom"/>
+        android:showAsAction="always"/>
         
-    <item android:id="@+id/action_player"
-          android:icon="@drawable/ic_action_player"
-          android:title="@string/action_player"
-          app:showAsAction="never"/>
+    <item 
+        android:id="@+id/action_player"
+        android:icon="@mipmap/ic_action_player"
+        android:title="@string/action_player" 
+        android:showAsAction="always"/>
+    <item 
+        android:id="@+id/action_search"
+        android:icon="@mipmap/ic_action_search"
+        android:title="Search"
+        android:showAsAction="always"/>
 </menu>

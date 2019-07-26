@@ -9,13 +9,10 @@ using Android.Media;
 using Android.Util;
 using Android.Views;
 
-using Android.Support.V7.App;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
-
 namespace Astral
 {
     [Activity(Label = "Astral", MainLauncher = true, Icon = "@mipmap/icon")]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : Activity
     {
         //int count = 1;
         bool isPlaying;
@@ -54,6 +51,7 @@ namespace Astral
         }
 
         //**
+
         //*
         //  When play button is clicked.
         //  We either play a new song/resume to the old song Or pause the player
@@ -163,8 +161,9 @@ namespace Astral
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.navigationBar);
-            SetSupportActionBar(toolbar);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.navigationBar);
+            SetActionBar(toolbar);
+            ActionBar.Title = "";
 
             string[] songList = Resources.GetStringArray(Resource.Array.song_list);
 
@@ -173,13 +172,13 @@ namespace Astral
                 isPlaying = savedInstanceState.GetBoolean("is_playing", false);
             }
 
-            //var playButton = FindViewById<Button>(Resource.Id.playButton);
-            //var fastForwardButton = FindViewById<Button>(Resource.Id.fastforwardButton);
-            //var rewindButton = FindViewById<Button>(Resource.Id.rewindButton);
+            var playButton = FindViewById<Button>(Resource.Id.playButton);
+            var fastForwardButton = FindViewById<Button>(Resource.Id.fastforwardButton);
+            var rewindButton = FindViewById<Button>(Resource.Id.rewindButton);
 
-            //playButton.Click += (sender, e) => OnPlayButton(playButton, songList);
-            //fastForwardButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1);
-            //rewindButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong <= 0, -1);
+            playButton.Click += (sender, e) => OnPlayButton(playButton, songList);
+            fastForwardButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1);
+            rewindButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong <= 0, -1);
         }
 
         protected override void OnSaveInstanceState(Bundle outState)
