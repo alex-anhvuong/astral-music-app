@@ -7,12 +7,15 @@ using Android.Widget;
 using Android.OS;
 using Android.Media;
 using Android.Util;
+using Android.Views;
 
+using Android.Support.V7.App;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Astral
 {
     [Activity(Label = "Astral", MainLauncher = true, Icon = "@mipmap/icon")]
-    public class MainActivity : Activity
+    public class MainActivity : AppCompatActivity
     {
         //int count = 1;
         bool isPlaying;
@@ -160,6 +163,9 @@ namespace Astral
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.navigationBar);
+            SetSupportActionBar(toolbar);
+
             string[] songList = Resources.GetStringArray(Resource.Array.song_list);
 
             if (savedInstanceState != null)
@@ -167,19 +173,25 @@ namespace Astral
                 isPlaying = savedInstanceState.GetBoolean("is_playing", false);
             }
 
-            var playButton = FindViewById<Button>(Resource.Id.playButton);
-            var fastForwardButton = FindViewById<Button>(Resource.Id.fastforwardButton);
-            var rewindButton = FindViewById<Button>(Resource.Id.rewindButton);
+            //var playButton = FindViewById<Button>(Resource.Id.playButton);
+            //var fastForwardButton = FindViewById<Button>(Resource.Id.fastforwardButton);
+            //var rewindButton = FindViewById<Button>(Resource.Id.rewindButton);
 
-            playButton.Click += (sender, e) => OnPlayButton(playButton, songList);
-            fastForwardButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1);
-            rewindButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong <= 0, -1);
+            //playButton.Click += (sender, e) => OnPlayButton(playButton, songList);
+            //fastForwardButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1);
+            //rewindButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong <= 0, -1);
         }
 
         protected override void OnSaveInstanceState(Bundle outState)
         {
             outState.PutBoolean("is_playing", isPlaying);
             base.OnSaveInstanceState(outState);
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.bottom_navigation_bar, menu);
+            return base.OnCreateOptionsMenu(menu);
         }
     }
 }

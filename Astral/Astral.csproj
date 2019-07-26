@@ -171,10 +171,14 @@
     <AndroidResource Include="Resources\drawable\rewind.png" />
     <AndroidResource Include="Resources\raw\shapeofyou.mp3" />
     <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\drawable\ic_action_library.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_player.png" />
+    <AndroidResource Include="Resources\menu\bottom_navigation_bar.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\raw\" />
+    <Folder Include="Resources\menu\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\shapeofyou.mp3" />

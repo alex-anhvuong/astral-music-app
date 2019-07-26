@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">>
+    <item
+        android:id="@+id/action_library"
+        android:icon="@drawable/ic_action_library"
+        android:title="@string/action_library"
+        app:showAsAction="ifRoom"/>
+        
+    <item 
+        android:id="@+id/action_player"
+        android:icon="@drawable/ic_action_player"
+        android:title="@string/action_player"
+        app:showAsAction="never"/>
+</menu>

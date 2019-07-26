@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Astral</string>
+    <string name="action_library">Library</string>
+    <string name="action_player">Player</string>
     <string-array name="song_list">
         <item>testrock.mp3</item>
         <item>shapeofyou.mp3</item>
