@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:minWidth="25px"
+	android:minHeight="25px"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:id="@+id/relativeLayout2"
+	android:layout_alignParentBottom="true">
+	<Toolbar
+		android:id="@+id/navigationBar"
+		android:layout_width="fill_parent"
+		android:layout_height="75dp"
+		android:background="@color/my_purple"
+		android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar">
+		<GridLayout
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/gridLayout1"
+			android:orientation="horizontal"
+			android:columnCount="3">
+			<Button
+				android:text=""
+				android:layout_width="48dp"
+				android:id="@+id/myLibraryButton"
+				android:background="@mipmap/ic_action_library" />
+			<Button
+				android:text=""
+				android:layout_width="48dp"
+				android:id="@+id/button2"
+				android:layout_gravity="center_horizontal"
+				android:background="@mipmap/ic_action_player"/>
+			<Button
+				android:text=""
+				android:layout_width="48dp"
+				android:id="@+id/button3"
+				android:background="@mipmap/ic_action_search"/>
+		</GridLayout>
+	</Toolbar>
+</RelativeLayout>

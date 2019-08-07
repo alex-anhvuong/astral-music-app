@@ -149,6 +149,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MyLibraryActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -176,6 +177,14 @@
     <AndroidResource Include="Resources\mipmap-mdpi\ic_action_library.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\ic_action_search.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\ic_action_player.png" />
+    <AndroidResource Include="Resources\layout\MyLibrary.axml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Toolbar.axml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

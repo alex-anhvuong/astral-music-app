@@ -9,4 +9,17 @@
         <item>bestpartofme.mp3</item>
         <item>perfect.mp3</item>
     </string-array>
+    <string-array name="my_library_list">
+        <item>Playlists</item>
+        <item>Artists</item>
+        <item>Albums</item>
+        <item>Song</item>
+        <item>Downloaded Music</item>
+    </string-array>
+    <string-array name="my_song_list">
+        <item>Test Rock</item>
+        <item>Shape Of You</item>
+        <item>Best Part of Me</item>
+        <item>Perfect</item>
+    </string-array>
 </resources>

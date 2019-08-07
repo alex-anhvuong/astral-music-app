@@ -1,7 +1,8 @@
-﻿using Java.IO;
-using System;
+﻿using System;
+using System.IO;
 
 using Android.App;
+using Android.Content;
 using Android.Content.Res;
 using Android.Widget;
 using Android.OS;
@@ -92,7 +93,7 @@ namespace Astral
         //  - The "condition" determines whether we are at the two ends of the list
         //*
         //**
-        protected void OnFastforwardOrRewind(Button playButton, string[] songList, Func<Boolean> condition, int i)
+        protected void OnFastforwardOrRewind(Button playButton, string[] songList, Func<Boolean> condition, int i)  
         {
             //  STOP THE CURRENT SONG
             //  Release the resource that player currently holding
@@ -116,43 +117,7 @@ namespace Astral
                 StartPlayer(songList[indexOfCurrentSong]);
                 OnSongCompletion(songList);
             }
-        }
-
-        //protected void AddForwardButtonFunc(object sender, EventArgs e, Button playButton, string[] songList)
-        //{
-        //    //  STOP THE CURRENT SONG
-        //    //  Release the resource that player currently holding
-        //    //  player must be null after that
-        //    if (player != null) player.Release();
-        //    player = null;
-
-        //    //  If we run out of song (to the end of the list
-        //    //  Switch the status of isPlaying and the icon of playButton 
-        //    if (indexOfCurrentSong >= songList.Length - 1)
-        //    {
-        //        isPlaying = false;
-        //        playButton.SetBackgroundResource(Resource.Drawable.play);
-        //        return;
-        //    }
-
-        //    //  CALL A NEW SONG if the player is playing
-        //    indexOfCurrentSong++;
-        //    if (isPlaying) StartPlayer(songList[indexOfCurrentSong]);
-        //}
-
-        //protected void AddRewindButtonFunc(object sender, EventArgs e, Button playButton, string[] songList)
-        //{
-        //    if (player != null) player.Release();
-        //    player = null;
-        //    if (indexOfCurrentSong <= 0)
-        //    {
-        //        isPlaying = false;
-        //        playButton.SetBackgroundResource(Resource.Drawable.play);
-        //        return;
-        //    }
-        //    indexOfCurrentSong--;
-        //    if (isPlaying) StartPlayer(songList[indexOfCurrentSong]);
-        //}
+        }     
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -169,29 +134,40 @@ namespace Astral
 
             if (savedInstanceState != null)
             {
+                //Console.WriteLine(isPlaying);
                 isPlaying = savedInstanceState.GetBoolean("is_playing", false);
             }
 
             var playButton = FindViewById<Button>(Resource.Id.playButton);
             var fastForwardButton = FindViewById<Button>(Resource.Id.fastforwardButton);
             var rewindButton = FindViewById<Button>(Resource.Id.rewindButton);
+            var myLibraryButton = FindViewById<Button>(Resource.Id.myLibraryButton);
 
             playButton.Click += (sender, e) => OnPlayButton(playButton, songList);
             fastForwardButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1);
             rewindButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong <= 0, -1);
+
+            myLibraryButton.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(MyLibraryActivity));
+                StartActivity(intent);
+            };
         }
 
         protected override void OnSaveInstanceState(Bundle outState)
         {
+            //Console.WriteLine(isPlaying);
             outState.PutBoolean("is_playing", isPlaying);
             base.OnSaveInstanceState(outState);
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.bottom_navigation_bar, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+        
+
+        //public override bool OnCreateOptionsMenu(IMenu menu)
+        //{
+        //    MenuInflater.Inflate(Resource.Menu.bottom_navigation_bar, menu);
+        //    return base.OnCreateOptionsMenu(menu);
+        //}
     }
 }
 
