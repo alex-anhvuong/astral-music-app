@@ -26,6 +26,8 @@ namespace Astral
             string[] mySongList = Resources.GetStringArray(Resource.Array.my_song_list);
             string[] myLibraryList = Resources.GetStringArray(Resource.Array.my_library_list);
             var myLibraryButton = FindViewById<Button>(Resource.Id.myLibraryButton);
+            var myPlayerButton = FindViewById<Button>(Resource.Id.myPlayerButton);
+
             ListView listView = FindViewById<ListView>(Resource.Id.menu_list);
 
             ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, myLibraryList);
@@ -35,6 +37,12 @@ namespace Astral
             myLibraryButton.Click += (sender, e) =>
             {
                 var intent = new Intent(this, typeof(MyLibraryActivity));
+                StartActivity(intent);
+            };
+
+            myPlayerButton.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(MainActivity));
                 StartActivity(intent);
             };
 

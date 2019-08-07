@@ -3105,20 +3105,20 @@ namespace Astral
 			// aapt resource value: 0x7f0a0069
 			public const int action_bar_title = 2131361897;
 			
-			// aapt resource value: 0x7f0a00af
-			public const int action_container = 2131361967;
+			// aapt resource value: 0x7f0a00b0
+			public const int action_container = 2131361968;
 			
 			// aapt resource value: 0x7f0a008e
 			public const int action_context_bar = 2131361934;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int action_divider = 2131361978;
+			// aapt resource value: 0x7f0a00bb
+			public const int action_divider = 2131361979;
 			
-			// aapt resource value: 0x7f0a00b0
-			public const int action_image = 2131361968;
+			// aapt resource value: 0x7f0a00b1
+			public const int action_image = 2131361969;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int action_library = 2131361989;
+			// aapt resource value: 0x7f0a00c6
+			public const int action_library = 2131361990;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int action_menu_divider = 2131361795;
@@ -3135,17 +3135,17 @@ namespace Astral
 			// aapt resource value: 0x7f0a006b
 			public const int action_mode_close_button = 2131361899;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int action_player = 2131361990;
-			
 			// aapt resource value: 0x7f0a00c7
-			public const int action_search = 2131361991;
+			public const int action_player = 2131361991;
 			
-			// aapt resource value: 0x7f0a00b1
-			public const int action_text = 2131361969;
+			// aapt resource value: 0x7f0a00c8
+			public const int action_search = 2131361992;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int actions = 2131361979;
+			// aapt resource value: 0x7f0a00b2
+			public const int action_text = 2131361970;
+			
+			// aapt resource value: 0x7f0a00bc
+			public const int actions = 2131361980;
 			
 			// aapt resource value: 0x7f0a006c
 			public const int activity_chooser_view_content = 2131361900;
@@ -3177,11 +3177,8 @@ namespace Astral
 			// aapt resource value: 0x7f0a0044
 			public const int bottom = 2131361860;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int button2 = 2131361985;
-			
-			// aapt resource value: 0x7f0a00c2
-			public const int button3 = 2131361986;
+			// aapt resource value: 0x7f0a00c3
+			public const int button3 = 2131361987;
 			
 			// aapt resource value: 0x7f0a0072
 			public const int buttonPanel = 2131361906;
@@ -3198,8 +3195,8 @@ namespace Astral
 			// aapt resource value: 0x7f0a0086
 			public const int checkbox = 2131361926;
 			
-			// aapt resource value: 0x7f0a00b9
-			public const int chronometer = 2131361977;
+			// aapt resource value: 0x7f0a00ba
+			public const int chronometer = 2131361978;
 			
 			// aapt resource value: 0x7f0a0061
 			public const int clip_horizontal = 2131361889;
@@ -3297,8 +3294,8 @@ namespace Astral
 			// aapt resource value: 0x7f0a000a
 			public const int ghost_view = 2131361802;
 			
-			// aapt resource value: 0x7f0a00bf
-			public const int gridLayout1 = 2131361983;
+			// aapt resource value: 0x7f0a00c0
+			public const int gridLayout1 = 2131361984;
 			
 			// aapt resource value: 0x7f0a0081
 			public const int group_divider = 2131361921;
@@ -3312,8 +3309,8 @@ namespace Astral
 			// aapt resource value: 0x7f0a0071
 			public const int icon = 2131361905;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int icon_group = 2131361980;
+			// aapt resource value: 0x7f0a00bd
+			public const int icon_group = 2131361981;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int ifRoom = 2131361857;
@@ -3324,8 +3321,8 @@ namespace Astral
 			// aapt resource value: 0x7f0a00aa
 			public const int imageView1 = 2131361962;
 			
-			// aapt resource value: 0x7f0a00b5
-			public const int info = 2131361973;
+			// aapt resource value: 0x7f0a00b6
+			public const int info = 2131361974;
 			
 			// aapt resource value: 0x7f0a0068
 			public const int italic = 2131361896;
@@ -3354,11 +3351,11 @@ namespace Astral
 			// aapt resource value: 0x7f0a0070
 			public const int list_item = 2131361904;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int masked = 2131361988;
+			// aapt resource value: 0x7f0a00c5
+			public const int masked = 2131361989;
 			
-			// aapt resource value: 0x7f0a00ae
-			public const int menu_list = 2131361966;
+			// aapt resource value: 0x7f0a00af
+			public const int menu_list = 2131361967;
 			
 			// aapt resource value: 0x7f0a009c
 			public const int message = 2131361948;
@@ -3378,11 +3375,14 @@ namespace Astral
 			// aapt resource value: 0x7f0a002f
 			public const int multiply = 2131361839;
 			
-			// aapt resource value: 0x7f0a00c0
-			public const int myLibraryButton = 2131361984;
+			// aapt resource value: 0x7f0a00c1
+			public const int myLibraryButton = 2131361985;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int navigationBar = 2131361982;
+			// aapt resource value: 0x7f0a00c2
+			public const int myPlayerButton = 2131361986;
+			
+			// aapt resource value: 0x7f0a00bf
+			public const int navigationBar = 2131361983;
 			
 			// aapt resource value: 0x7f0a00a3
 			public const int navigation_header_container = 2131361955;
@@ -3396,14 +3396,14 @@ namespace Astral
 			// aapt resource value: 0x7f0a0025
 			public const int normal = 2131361829;
 			
-			// aapt resource value: 0x7f0a00b7
-			public const int notification_background = 2131361975;
+			// aapt resource value: 0x7f0a00b8
+			public const int notification_background = 2131361976;
+			
+			// aapt resource value: 0x7f0a00b4
+			public const int notification_main_column = 2131361972;
 			
 			// aapt resource value: 0x7f0a00b3
-			public const int notification_main_column = 2131361971;
-			
-			// aapt resource value: 0x7f0a00b2
-			public const int notification_main_column_container = 2131361970;
+			public const int notification_main_column_container = 2131361971;
 			
 			// aapt resource value: 0x7f0a0060
 			public const int outline = 2131361888;
@@ -3435,8 +3435,8 @@ namespace Astral
 			// aapt resource value: 0x7f0a00a9
 			public const int relativeLayout1 = 2131361961;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int relativeLayout2 = 2131361981;
+			// aapt resource value: 0x7f0a00be
+			public const int relativeLayout2 = 2131361982;
 			
 			// aapt resource value: 0x7f0a00ac
 			public const int rewindButton = 2131361964;
@@ -3444,11 +3444,11 @@ namespace Astral
 			// aapt resource value: 0x7f0a0055
 			public const int right = 2131361877;
 			
-			// aapt resource value: 0x7f0a00b6
-			public const int right_icon = 2131361974;
+			// aapt resource value: 0x7f0a00b7
+			public const int right_icon = 2131361975;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int right_side = 2131361972;
+			// aapt resource value: 0x7f0a00b5
+			public const int right_side = 2131361973;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int save_image_matrix = 2131361804;
@@ -3540,6 +3540,9 @@ namespace Astral
 			// aapt resource value: 0x7f0a004b
 			public const int snapMargins = 2131361867;
 			
+			// aapt resource value: 0x7f0a00ae
+			public const int songTitle = 2131361966;
+			
 			// aapt resource value: 0x7f0a0073
 			public const int spacer = 2131361907;
 			
@@ -3606,8 +3609,8 @@ namespace Astral
 			// aapt resource value: 0x7f0a001a
 			public const int textinput_helper_text = 2131361818;
 			
-			// aapt resource value: 0x7f0a00b8
-			public const int time = 2131361976;
+			// aapt resource value: 0x7f0a00b9
+			public const int time = 2131361977;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int title = 2131361827;
@@ -3657,8 +3660,8 @@ namespace Astral
 			// aapt resource value: 0x7f0a001b
 			public const int view_offset_helper = 2131361819;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int visible = 2131361987;
+			// aapt resource value: 0x7f0a00c4
+			public const int visible = 2131361988;
 			
 			// aapt resource value: 0x7f0a0043
 			public const int withText = 2131361859;

@@ -93,7 +93,7 @@ namespace Astral
         //  - The "condition" determines whether we are at the two ends of the list
         //*
         //**
-        protected void OnFastforwardOrRewind(Button playButton, string[] songList, Func<Boolean> condition, int i)  
+        protected void OnFastforwardOrRewind(TextView songTitle, Button playButton, string[] songList, Func<Boolean> condition, int i, string[] mySongList)  
         {
             //  STOP THE CURRENT SONG
             //  Release the resource that player currently holding
@@ -111,6 +111,7 @@ namespace Astral
             }
 
             //  CALL A NEW SONG if the player is playing
+            songTitle.Text = mySongList[i];
             indexOfCurrentSong += i;
             if (isPlaying) 
             {
@@ -131,6 +132,8 @@ namespace Astral
             ActionBar.Title = "";
 
             string[] songList = Resources.GetStringArray(Resource.Array.song_list);
+            string[] mySongList = Resources.GetStringArray(Resource.Array.my_song_list);
+
 
             if (savedInstanceState != null)
             {
@@ -142,14 +145,22 @@ namespace Astral
             var fastForwardButton = FindViewById<Button>(Resource.Id.fastforwardButton);
             var rewindButton = FindViewById<Button>(Resource.Id.rewindButton);
             var myLibraryButton = FindViewById<Button>(Resource.Id.myLibraryButton);
+            var myPlayerButton = FindViewById<Button>(Resource.Id.myPlayerButton);
+            var songTitle = FindViewById<TextView>(Resource.Id.songTitle);
 
             playButton.Click += (sender, e) => OnPlayButton(playButton, songList);
-            fastForwardButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1);
-            rewindButton.Click += (sender, e) => OnFastforwardOrRewind(playButton, songList, () => indexOfCurrentSong <= 0, -1);
+            fastForwardButton.Click += (sender, e) => OnFastforwardOrRewind(songTitle, playButton, songList, () => indexOfCurrentSong >= songList.Length - 1, 1, mySongList);
+            rewindButton.Click += (sender, e) => OnFastforwardOrRewind(songTitle, playButton, songList, () => indexOfCurrentSong <= 0, -1, mySongList);
 
             myLibraryButton.Click += (sender, e) =>
             {
                 var intent = new Intent(this, typeof(MyLibraryActivity));
+                StartActivity(intent);
+            };
+
+            myPlayerButton.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(MainActivity));
                 StartActivity(intent);
             };
         }

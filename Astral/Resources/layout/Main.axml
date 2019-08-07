@@ -55,5 +55,13 @@
 			android:background="@drawable/fastforward"
         />
 	</RelativeLayout>
+    <TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Rock sound"
+		android:layout_above="@id/relativeLayout1"
+		android:layout_centerHorizontal="true"
+		android:textAppearance="@android:style/TextAppearance.Material.Display2"
+        android:id="@+id/songTitle"/>
 	<include layout="@layout/toolbar"/>
 </RelativeLayout>
